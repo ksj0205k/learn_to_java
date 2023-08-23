@@ -99,5 +99,56 @@ public class _03_string_var {
         // String.format은 문자열을 리턴하는 메서드이고
         // System.out.printf는 문자열을 출력하는 메서드라는 점에서 차이가 있다. 상황에 맞게 선택하여 사용하자.
 
+        // strignBuffer
+
+        StringBuffer sb = new StringBuffer();  // StringBuffer 객체 sb 생성
+        sb.append("hello");
+        sb.append(" ");
+        sb.append("jump to java");
+        String result1 = sb.toString();
+        System.out.println(result1);  // "hello jump to java" 출력
+
+        // StringBuffer 자료형은 append 메서드를 사용하여 문자열을 계속해서 추가해 나갈 수 있다.
+        // toString() 메서드를 사용하면 StringBuffer를 String 자료형으로 변경할 수도 있다.
+
+        String result2 = "";
+        result2 += "hello";
+        result2 += " ";
+        result2 += "jump to java";
+        System.out.println(result2);  // "hello jump to java" 출력
+
+        // 두 번째 예제와 첫 번째 예제의 결과는 같지만 내부적으로 객체를 생성하고 메모리를 사용하는 과정은 다르다.
+        // 첫 번째 예제에서는 StringBuffer 객체를 한 번만 생성하지만,
+        // 두 번째 예제에서는 String 자료형에 + 연산이 있을 때마다 새로운 String 객체를 생성하므로
+        // 총 4개의 String 자료형 객체가 만들어진다.
+
+        // StringBuffer 자료형은 String 자료형보다 무거운 편에 속한다.
+        // new StringBuffer()로 객체를 생성하면 String을 사용할 때보다 메모리 사용량도 많고 속도도 느리다.
+        // 따라서 문자열을 추가하거나 변경하는 작업이 많으면 StringBuffer를, 적으면 String을 사용하는 것이 유리하다.
+
+
+        // StringBuffer는 멀티 스레드 환경에서 안전하고, StringBuilder는 StringBuffer보다 성능이 우수하다는 장점이 있다.
+        // 따라서 동기화를 고려할 필요가 없는 상황에서는 StringBuffer보다 StringBuilder를 사용하는 것이 유리하다.
+        StringBuilder sb2 = new StringBuilder();
+        sb.append("hello");
+        sb.append(" ");
+        sb.append("jump to java");
+        String result3 = sb2.toString();
+        System.out.println(result3);
+
+
+        // insert 메서드는 특정 위치에 원하는 문자열을 삽입할 수 있다.
+        // insert를 사용하여 0번째 위치에 hello라는 문자열을 삽입해 보자.
+        StringBuffer sb1 = new StringBuffer();
+        sb1.append("jump to java");
+        sb1.insert(0, "hello ");
+        System.out.println(sb1.toString()); // 출력 : hello jump to java
+
+        //substring(시작 위치, 끝 위치)와 같이 사용하면 StringBuffer 객체의 시작 위치에서 끝 위치까지의 문자를 뽑아낸다
+        StringBuffer sb4 = new StringBuffer();
+        sb.append("Hello jump to java");
+        System.out.println(sb4.substring(0, 4));
+
+
     }
 }
