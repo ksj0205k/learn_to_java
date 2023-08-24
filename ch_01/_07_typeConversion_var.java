@@ -52,8 +52,5 @@ public class _07_typeConversion_var {
         final List<String> a1 = List.of("a", "b");
         //a1.add("c");  // UnsupportedOperationException 발생
 
-
-
-
     }
 }
