@@ -15,7 +15,7 @@ interface Barkable {
 interface BarkablePredator extends Predator, Barkable {
 }
 
-class Animal {
+class Animall {
     String name;
 
     void setName(String name) {
